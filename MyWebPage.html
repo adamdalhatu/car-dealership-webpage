@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Fast Car Dealership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Vroom Vroom Motors</h1>
+        <p>The best cars in town.</p>
+    </header>
+
+    <main>
+        <h2>Our Featured Car</h2>
+        <p>Check out this amazing ride! It goes incredibly fast.</p>
+        
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400" alt="A cool sports car">
+        
+        <hr>
+
+        <div id="confirmationMessage" style="display: none; background-color: #d4edda; color: #155724; padding: 20px; border: 1px solid #c3e6cb; margin-bottom: 25px;">
+            <h3>🚗 Test Drive Booked!</h3>
+            <p>Thank you! Your application has been processed locally. We will call you shortly.</p>
+        </div>
+
+        <form id="bookingForm" onsubmit="showSuccessMessage(event)">
+            
+            <h2>Book a Live Test Drive</h2>
+            <p>Please provide your information below to reserve a vehicle.</p>
+            <br>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+            <br><br>
+
+            <label for="userEmail">Email Address:</label>
+            <input type="email" id="userEmail" name="userEmail" placeholder="name@example.com" required>
+            <br><br>
+
+            <label for="userPhone">Phone Number:</label>
+            <input type="tel" id="userPhone" name="userPhone" placeholder="123-456-7890" required>
+            <br><br>
+
+            <label for="driveDate">Preferred Booking Date:</label>
+            <input type="date" id="driveDate" name="driveDate" required>
+            <br><br>
+
+            <label for="userAge">Your Age (Must be 18+):</label>
+            <input type="number" id="userAge" name="userAge" min="18" max="100" required>
+            <br><br>
+
+            <label for="carModel">Select Preferred Car Model:</label>
+            <select id="carModel" name="carModel">
+                <option value="sports-car">Lightning Sports Car</option>
+                <option value="suv">Mountain Cruiser SUV</option>
+                <option value="electric">Eco-Charge EV</option>
+            </select>
+            <br><br>
+
+            <label>
+                <input type="checkbox" id="terms" name="terms" required>
+                I verify that I hold a valid, unexpired driver's license.
+            </label>
+            <br><br>
+
+            <input type="submit" value="Submit Booking Application">
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vroom Vroom Motors. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault(); 
+            
+            const form = document.getElementById('bookingForm');
+            const confirmationBox = document.getElementById('confirmationMessage');
+            
+            form.style.display = "none";         
+            confirmationBox.style.display = "block"; 
+        }
+    </script>
+
+</body>
+</html>

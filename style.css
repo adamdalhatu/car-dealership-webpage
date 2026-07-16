@@ -1,0 +1,119 @@
+/* ==========================================
+   1. ROOT & BODY STYLES (px vs em vs rem)
+   ========================================== */
+html {
+    font-size: 16px; /* Our base/root size. 1rem = 16px */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #333333; /* Dark charcoal text */
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================
+   2. TEXT & FONT STYLES (Sizing using rem)
+   ========================================== */
+header {
+    background-color: #1a1a1a; /* Dark sleek header */
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem; /* rem scales relative to root font-size */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Large title */
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   3. IMAGES IN CSS 
+   ========================================== */
+img {
+    max-width: 100%; /* Prevents the image from bursting off the screen */
+    height: auto;
+    border-radius: 8px; /* Rounds the image corners */
+    display: block;
+    margin: 1.5rem 0; /* Adds space above and below the image */
+}
+
+/* ==========================================
+   4. THE BOX MODEL (Padding, Border, Margin)
+   ========================================== */
+main {
+    max-width: 600px; /* Centers the content neatly */
+    margin: 2rem auto; /* Top/Bottom margin of 2rem, auto left/right to center it */
+    padding: 1.5em; /* Padding scales relative to the parent font size */
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow drop */
+}
+
+/* Styled Local Form */
+#bookingForm {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Border */
+    padding: 2rem;            /* Padding (Inside space) */
+    margin-top: 1.5rem;       /* Margin (Outside space) */
+    border-radius: 8px;
+}
+
+/* Labels and Inputs */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem; /* px inside input */
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't stretch the box width */
+    font-size: 1rem;
+}
+
+/* The Submit Button styling */
+input[type="submit"] {
+    background-color: #ff3b30; /* Bold red sporty accent color */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #d32f2f; /* Darker red when hovered */
+}
+
+/* Success Message styling */
+#confirmationMessage {
+    border-left: 5px solid #28a745; /* Thick green success accent line */
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777777;
+    font-size: 0.9rem;
+}
