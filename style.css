@@ -1,31 +1,37 @@
-/* ==========================================
-   1. ROOT & BODY STYLES (px vs em vs rem)
+ /* ==========================================
+   1. GLOBAL STYLES
    ========================================== */
 html {
-    font-size: 16px; /* Our base/root size. 1rem = 16px */
+    font-size: 16px;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333333; /* Dark charcoal text */
+    background-color: #f8f9fa;
+    color: #333333;
     margin: 0;
     padding: 0;
 }
 
 /* ==========================================
-   2. TEXT & FONT STYLES (Sizing using rem)
+   2. FLEXBOX LAYOUT 
    ========================================== */
 header {
-    background-color: #1a1a1a; /* Dark sleek header */
+    background-color: #1a1a1a;
     color: #ffffff;
+    padding: 2rem 1rem;
+    
+    /* Using Flexbox to align content neatly */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 2rem 1rem; /* rem scales relative to root font-size */
 }
 
 header h1 {
-    font-size: 2.5rem; /* Large title */
+    font-size: 2.5rem;
     margin: 0;
 }
 
@@ -36,38 +42,33 @@ header p {
 }
 
 /* ==========================================
-   3. IMAGES IN CSS 
+   3. IMAGES & BOX MODEL
    ========================================== */
 img {
-    max-width: 100%; /* Prevents the image from bursting off the screen */
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Rounds the image corners */
+    border-radius: 8px;
     display: block;
-    margin: 1.5rem 0; /* Adds space above and below the image */
+    margin: 1.5rem 0;
 }
 
-/* ==========================================
-   4. THE BOX MODEL (Padding, Border, Margin)
-   ========================================== */
 main {
-    max-width: 600px; /* Centers the content neatly */
-    margin: 2rem auto; /* Top/Bottom margin of 2rem, auto left/right to center it */
-    padding: 1.5em; /* Padding scales relative to the parent font size */
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5em;
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow drop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Styled Local Form */
 #bookingForm {
     background-color: #ffffff;
-    border: 1px solid #e0e0e0; /* Border */
-    padding: 2rem;            /* Padding (Inside space) */
-    margin-top: 1.5rem;       /* Margin (Outside space) */
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    margin-top: 1.5rem;
     border-radius: 8px;
 }
 
-/* Labels and Inputs */
 label {
     font-weight: bold;
     display: block;
@@ -81,16 +82,15 @@ input[type="date"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 0.75rem; /* px inside input */
+    padding: 0.75rem;
     border: 1px solid #cccccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't stretch the box width */
-    font-size: 1rem;
+    box-sizing: border-box;
+    font-size: 1.0rem;
 }
 
-/* The Submit Button styling */
 input[type="submit"] {
-    background-color: #ff3b30; /* Bold red sporty accent color */
+    background-color: #ff3b30;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -102,12 +102,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #d32f2f; /* Darker red when hovered */
+    background-color: #d32f2f;
 }
 
-/* Success Message styling */
 #confirmationMessage {
-    border-left: 5px solid #28a745; /* Thick green success accent line */
+    border-left: 5px solid #28a745;
     border-radius: 4px;
 }
 
@@ -116,4 +115,16 @@ footer {
     padding: 2rem;
     color: #777777;
     font-size: 0.9rem;
+}
+
+/* If the device screen width is 768px or smaller (like tablets or phones) */
+@media (max-width: 768px) {
+    main {
+        margin: 1rem; /* Reduces outer margin so it fits nicely on small mobile screens */
+        padding: 1rem; /* Reduces inner spacing */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Shrinks the main title slightly for mobile */
+    }
 }
